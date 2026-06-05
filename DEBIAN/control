@@ -1,0 +1,8 @@
+Package: cybercam-app-face-detect
+Description: cybercam face detect demo 
+Version: 1.0.0
+Maintainer: sc-bin <3335447573@qq.com>
+Section: free
+Priority: optional
+Installed-Size: 9968
+Architecture: all
