@@ -26,18 +26,19 @@ if not cap.isOpened():
     exit()
 
 #计算帧率
-count=0
-pt=0
-fps = 0
-
+last_time = time.time()
+fps = 0.0
 while True:
     
     #计算帧率
-    count+=1    
-    if time.time()-pt >=1 : #超过1秒
-        fps=int(1/((time.time()-pt)/count))#计算帧率
-        count=0
-        pt=time.time()
+    current_time = time.time()
+    delta = current_time - last_time
+    last_time = current_time
+    if delta > 0:
+        fps = round(1.0 / delta, 1)
+    else:
+        fps = 0.0
+    print("FPS: ", fps)
     
     # 摄像头读取一帧图像    
     ret, img = cap.read()
